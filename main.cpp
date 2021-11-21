@@ -52,6 +52,7 @@ int main() {
     //if the data members of the class are yet to be initialized, the class's constructor is then called
     ClothingInventoryItem *ClothingPtr2=new ClothingInventoryItem();
     //should provide constructor values
+    cout<<"ClothingPtr 2 default constructor values: "<<endl;
     ClothingPtr2->PrintItemAll();
     cout<<"\n\n";
 
@@ -60,6 +61,8 @@ int main() {
     ClothingPtr2->SetQuantity(4);
     ClothingPtr2->SetBrand("Forever 21");
     //printing the values of what ClothingPtr2 is pointing to
+
+    cout<<"ClothingPtr2 after setting data member values: "<<endl;
     ClothingPtr2->PrintItemAll();
     cout<<"\n\n";
 
@@ -70,6 +73,7 @@ int main() {
     //the difference from this one and the last one's output is how brand is now gone
     //from the output and the only difference is how itemBrand is a private member of the
     //derived class ClothingInventoryItem
+    cout<<"ClothingPtr2 after using delete operator: "<<endl;
     ClothingPtr2->PrintItemAll();
     cout<<"\n\n";
 
