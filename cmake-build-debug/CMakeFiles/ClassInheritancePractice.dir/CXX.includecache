@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sogent/CLionProjects/ClassInheritancePractice/GenericInventoryItem.h
+iostream
+-
+
+/Users/sogent/CLionProjects/ClassInheritancePractice/main.cpp
+iostream
+-
+vector
+-
+GenericInventoryItem.h
+/Users/sogent/CLionProjects/ClassInheritancePractice/GenericInventoryItem.h
+
