@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     //how to declare an object pointer?
-    GenericInventoryItem* ItemPtr1= new GenericInventoryItem;
+    GenericInventoryItem* ItemPtr1= new GenericInventoryItem();
 
     //manually initializing a pointer
     //which I then make point to a class object
@@ -16,7 +16,7 @@ int main() {
     //returning a pointer to the allocated memory
     //if the type is a class, the new operator calls the class's constructor
     //after allocating memory for the class's member variables
-    auto *ClothingPtr1= new ClothingInventoryItem;
+    auto *ClothingPtr1= new ClothingInventoryItem();
 
     //initializing a vector of GenericInventoryItem object pointers
     vector<GenericInventoryItem*> allPtrItems;
@@ -27,11 +27,16 @@ int main() {
 
     ItemPtr1->SetName("Digital TV");
     ItemPtr1->SetQuantity(5);
+    cout<<"ItemPtr1 output:"<<endl;
     ItemPtr1->PrintItemAll();
     cout<<"\n\n";
-    //delete ItemPtr;
+
+    delete ItemPtr1;
+    cout<<"ItemPtr1 output after delete operator: "<<endl;
     ItemPtr1->PrintItemAll();
     cout<<"\n\n";
+    //why is it still producing the same output?
+    //shouldn't the memory be deallocated??
 
 
 
@@ -45,21 +50,26 @@ int main() {
 
     //example of how if the pointer is pointing to a class type of allocated memory via new,
     //if the data members of the class are yet to be initialized, the class's constructor is then called
-    ClothingInventoryItem *ClothingPtr2=new ClothingInventoryItem;
+    ClothingInventoryItem *ClothingPtr2=new ClothingInventoryItem();
     //should provide constructor values
     ClothingPtr2->PrintItemAll();
     cout<<"\n\n";
 
-
+    //setting values to ClothingPtr2
     ClothingPtr2->SetName("sweater");
     ClothingPtr2->SetQuantity(4);
     ClothingPtr2->SetBrand("Forever 21");
+    //printing the values of what ClothingPtr2 is pointing to
     ClothingPtr2->PrintItemAll();
     cout<<"\n\n";
-    //delete ClothingPtr2;
+
+
+    delete ClothingPtr2;
     cout<<endl;
     //why is this still producing output
-    //i think because the pointer itself it is still pointing to something, the memory is just blank?
+    //the difference from this one and the last one's output is how brand is now gone
+    //from the output and the only difference is how itemBrand is a private member of the
+    //derived class ClothingInventoryItem
     ClothingPtr2->PrintItemAll();
     cout<<"\n\n";
 
