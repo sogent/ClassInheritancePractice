@@ -6,11 +6,11 @@ using namespace std;
 
 int main() {
     //how to declare an object pointer?
-    GenericInventoryItem* ItemPtr= new GenericInventoryItem;
+    GenericInventoryItem* ItemPtr1= new GenericInventoryItem;
 
     //manually initializing a pointer
     //which I then make point to a class object
-    ProduceInventoryItem* ProducePtr=nullptr;
+    ProduceInventoryItem* ProducePtr1=nullptr;
 
     //allocating memory for the given type and then
     //returning a pointer to the allocated memory
@@ -18,19 +18,22 @@ int main() {
     //after allocating memory for the class's member variables
     auto *ClothingPtr1= new ClothingInventoryItem;
 
-    vector<GenericInventoryItem*> allItems;
-    allItems.push_back(ItemPtr);
-    allItems.push_back(ClothingPtr1);
+    //initializing a vector of GenericInventoryItem object pointers
+    vector<GenericInventoryItem*> allPtrItems;
+    allPtrItems.push_back(ItemPtr1);
+    allPtrItems.push_back(ClothingPtr1);
 
-    ItemPtr->SetName("Digital TV");
-    ItemPtr->SetQuantity(5);
-    ItemPtr->PrintItemAll();
+    vector<GenericInventoryItem> allItems;
+
+    ItemPtr1->SetName("Digital TV");
+    ItemPtr1->SetQuantity(5);
+    ItemPtr1->PrintItemAll();
     cout<<"\n\n";
     //delete ItemPtr;
-    ItemPtr->PrintItemAll();
+    ItemPtr1->PrintItemAll();
     cout<<"\n\n";
 
-    
+
 
     ClothingPtr1->SetName("Skirt");
     ClothingPtr1->SetQuantity(14);
@@ -69,7 +72,7 @@ int main() {
 
     //Making the pointer variable ProducePtr of type ProduceInventoryItem point
     //to Produce1
-    ProducePtr= &Produce1;
+    ProducePtr1= &Produce1;
 
 
     Clothing1.SetName("T-shirt");
@@ -90,11 +93,11 @@ int main() {
     cout<<endl;
     cout<<endl;
     cout<<"Produce1 pointer output: "<<endl;
-    ProducePtr->PrintItemAll();
+    ProducePtr1->PrintItemAll();
     cout<<endl;
     cout<<endl;
 
-    ProducePtr->PrintItemAll();
+    ProducePtr1->PrintItemAll();
     cout<<endl;
     cout<<endl;
 
